@@ -97,9 +97,9 @@ const loginUser = async function (req, res) {
         }
        
         
-        const author = await UserModel.findOne({ email, password });
+        const user= await UserModel.findOne({ email, password });
 
-        if (!author) {
+        if (!user) {
             res.status(401).send({ status: false, message: `Invalid login credentials` });
             return
         }
